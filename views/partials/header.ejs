@@ -16,14 +16,21 @@
 
 <header>
     <nav class="navbar navbar-expand navbar-dark bg-dark text-light">
-        <a class="navbar-brand" href="/posts/">🐓</a>
+       
+         <a href="/posts/" class="navbar-brand p0 pull-right"><img src="http://localhost:7777/pictures/chicken.png" class="img-responsive log-img"></a>
 
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
 
-          <li class="nav-item" class="btn btn-outline-dark text-light">
+
+        <% if (username) { %>
+          
+        <li class="nav-item" class="btn btn-outline-dark text-light">
             <a class="nav-link" href="/posts/new">New Cluck</a>
-          </li>
+        </li>
+          <% } %> 
+
+          
 
           <li class="nav-item" class="btn btn-outline-dark text-light">
             <a class="nav-link"  href="/posts/">Clucks</a>

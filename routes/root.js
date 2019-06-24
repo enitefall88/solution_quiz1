@@ -24,5 +24,10 @@ router.get("/loged_in",(request, response) => {
     response.render("logedIn");
 });
 
+router.post("/sign_out", (request, response) => {
+    response.clearCookie("username");
+    response.redirect("/");
+});
+
 
 module.exports = router;
