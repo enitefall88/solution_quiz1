@@ -17,17 +17,20 @@ router.post("/sign_in", (request, response) => {
     const username = request.body.username;
     response.cookie("username", username, { maxAge: COOKIE_MAX_AGE});
 
-    response.redirect("/loged_in");
+    response.redirect("/posts");
 });
 
-router.get("/loged_in",(request, response) => {
-    response.render("logedIn");
-});
+//router.get("/loged_in",(request, response) => {
+//    response.render("logedIn");
+//});
 
 router.post("/sign_out", (request, response) => {
     response.clearCookie("username");
     response.redirect("/");
 });
 
+router.get("/", (request, response) => {
+    response.redirect("/posts");
+});
 
 module.exports = router;

@@ -1,6 +1,9 @@
 const express = require("express");
 const knex = require("../db/client");
 const router = express.Router();
+router.get("/index", (request, response) => {
+        response.redirect("/");
+});
 
 router.get("/new", (request, response) => {
     response.render("./posts/new");
@@ -11,7 +14,8 @@ router.post("/", (request, response) => {
       .insert({
         title: request.body.title,
         imageUrl: request.body.imageUrl,
-        content: request.body.content
+        content: request.body.content,
+        username: request.cookies.username
       })
       .returning("*")
       .then(posts => {
@@ -29,6 +33,6 @@ router.post("/", (request, response) => {
   });
   
 
-  router
+  
 
 module.exports = router;
