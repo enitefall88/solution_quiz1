@@ -49,3 +49,19 @@ app.use((request, response, next) => {
     }
     next();
 });
+
+//routes
+const postsRouter = require("./routes/posts");
+const rootRouter = require("./routes/root");
+
+
+app.use("/posts", postsRouter);
+app.use("/", rootRouter);
+
+// server setup
+const PORT = 7777;
+const HOST = "localhost";
+app.listen(PORT, HOST, () => {
+
+console.log(`Server is running. Listening on http://${HOST}:${PORT}`);
+});
