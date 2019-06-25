@@ -4,13 +4,14 @@
   <% for (let post of posts) { %>
     <div class="card mb-4">
       <div class="card-body">
-           <h5 class="card-title"><%= post.username %></h5>
-        </a>  
-        <p class="card-text"><%= post.content %></p>
-        <a href="/posts/<%= post.user_id %>">
-
+         <img src="http://localhost:7777/pictures/common.jpg" class="img-responsive log-img">
+         <h5 class="card-title"><%= post.username %></h5>
         
-      </div>
+        <p class="card-text"><%= post.content %></p>
+        
+        <img src="<%= post.imageUrl%>" class="image-thumbnail">
+
+        </div>
     </div>
   <% } %>
 </div>

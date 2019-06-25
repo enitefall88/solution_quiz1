@@ -20,7 +20,7 @@ router.post("/", (request, response) => {
       .returning("*")
       .then(posts => {
         const [post] = posts;
-        response.redirect(`/posts/${post.id}`);
+        response.redirect(`/posts/`);
       });
   });
 
