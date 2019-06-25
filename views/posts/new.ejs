@@ -1,0 +1,25 @@
+<%- include("../partials/header")%>
+
+<form action="/posts" method="POST">
+
+    <div class="form-group">
+        <textarea
+            name="content"
+            cols="60"
+            rows="5"
+            placeholder="Whazz uup?"
+        ></textarea>
+    </div>
+    <div class="form-group">
+        <input
+            type="url"
+            class="form-control"
+            name="imageUrl"
+            placeholder="e.g. http://something.."
+        >
+    </div>
+
+  <input type="submit" value="Cluck!" class="btn btn-primary">
+</form>
+
+<%- include("../partials/footer")%>
